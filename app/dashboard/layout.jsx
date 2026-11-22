@@ -7,7 +7,7 @@ export const metadata = { title: "Dashboard" };
 
 // Runs on the server on every request, so it also works after a page refresh.
 export default async function DashboardLayout({ children }) {
-  const session = await auth.api.getSession({ headers: await headers() });
+  const session = await auth.api.getSession({ headers: await headers(), query: { disableCookieCache: true } });
   if (!session) redirect("/signin?next=/dashboard");
   if (session.user.isBlocked) redirect("/blocked");
 
