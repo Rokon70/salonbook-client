@@ -5,7 +5,8 @@ import { getSessionCookie } from "better-auth/cookies";
 export function middleware(request) {
   if (!getSessionCookie(request)) {
     const url = new URL("/signin", request.url);
-    url.searchParams.set("next", request.nextUrl.pathname);
+    // Keep the query string too (e.g. Stripe's session_id) so the user returns to the exact page after sign in.
+    url.searchParams.set("next", request.nextUrl.pathname + request.nextUrl.search);
     return NextResponse.redirect(url);
   }
   return NextResponse.next();
