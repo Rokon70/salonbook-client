@@ -11,6 +11,7 @@ const NAV = {
   customer: [
     { href: "/dashboard/customer", label: "Overview", icon: LayoutDashboard, exact: true },
     { href: "/dashboard/customer/appointments", label: "My Appointments", icon: CalendarDays },
+    { href: "/dashboard/customer/payments", label: "Payment History", icon: CreditCard },
     { href: "/dashboard/customer/profile", label: "My Profile", icon: UserCircle },
   ],
   admin: [
