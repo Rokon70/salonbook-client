@@ -2,7 +2,7 @@
 
 Next.js front end for the SalonBook salon appointment booking platform.
 
-**Live website:** `<add link>` · **Server repository:** `<add link>` · **Client repository:** `<add link>`
+**Live website:** `<add live website link>` · **Server repository:** https://github.com/Rokon70/salonbook-server · **Client repository:** https://github.com/Rokon70/salonbook-client
 
 ## Important Features
 - Public home and browse pages with **search, category filter and price sorting**
@@ -18,7 +18,7 @@ Next.js (App Router), React, Tailwind CSS, Better Auth, MongoDB (adapter), react
 
 ## Installation
 ```bash
-git clone <client-repo-url>
+git clone https://github.com/Rokon70/salonbook-client.git
 cd salonbook-client
 npm install
 cp .env.example .env.local   # fill in the values
