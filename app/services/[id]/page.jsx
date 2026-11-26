@@ -60,7 +60,9 @@ export default function ServiceDetailsPage() {
 }
 
 function BookingForm({ serviceId, onDone }) {
-  const today = new Date().toISOString().slice(0, 10);
+  // Local date (toISOString() is UTC and can be a day off in other timezones)
+  const now = new Date();
+  const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
   const [date, setDate] = useState("");
   const [slot, setSlot] = useState("");
   const [message, setMessage] = useState("");
@@ -92,7 +94,7 @@ function BookingForm({ serviceId, onDone }) {
       </div>
       <div>
         <span className="label">Available time slot</span>
-        {!date ? <p className="text-sm text-ink-faint">Pick a date to see time slots.</p> : slots.loading ? <Spinner className="h-5 w-5 text-berry-600" /> : slots.error ? (
+        {!date ? <p className="text-sm text-ink-faint">Pick a date to see time slots.</p> : slots.loading || (!slots.data && !slots.error) ? <Spinner className="h-5 w-5 text-berry-600" /> : slots.error ? (
           <p className="text-sm text-red-600">{slots.error}</p>
         ) : (
           <div className="grid grid-cols-3 gap-2">
