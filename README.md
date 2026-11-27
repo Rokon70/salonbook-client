@@ -2,6 +2,8 @@
 
 Next.js front end for the SalonBook salon appointment booking platform.
 
+> The redesigned **v2 UI** is now the code on `main`. See [README-v2.md](README-v2.md) for what changed. The previous UI is kept on the `backup/pre-v2-ui` branch.
+
 **Live website:** `<add live website link>` · **Server repository:** https://github.com/Rokon70/salonbook-server · **Client repository:** https://github.com/Rokon70/salonbook-client
 
 ## Important Features
